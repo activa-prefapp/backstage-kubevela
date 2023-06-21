@@ -5,7 +5,7 @@ For the demonstration of the KubeVela add-on for Backstage we are taking as a st
 ## Module installation
 
 
-Once the initial repository provided by KubeVela has been downloaded for testing, it is necessary to follow the following steps for the preparation of the container image.
+Once the initial repository provided by KubeVela for testing has been downloaded, the following steps are necessary for the preparation of the container image.
 
 ````
 yarn add --cwd packages/app @oamdev/plugin-kubevela-backend
@@ -40,6 +40,8 @@ You should note that the configuration requires deployment on kubernetes with th
 
 - KubeVela
 
+You will need to have the necessary secrets configured to be able to access your private repository image. Visit the [requirements section](https://github.com/activa-prefapp/documentation/tree/main/requirements) of the organization's general documentation for more info.
+
 ## Deployment Backstage application on KubeVela
 
 To deploy a custom instance of Backstage, such as the one in this repository, deploy the OAM plugin provided:
@@ -58,8 +60,6 @@ vela status backstage -n vela-system
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
 You can always keep your infrastructure deployment up to date using GitOps with FluxCD in KubeVela.
-
-
 
 ## Uninstall
 
