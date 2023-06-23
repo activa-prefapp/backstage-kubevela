@@ -1,6 +1,11 @@
 # backstage-kubevela
 
-For the demonstration of the KubeVela add-on for Backstage we are taking as a starting point and first commit the repository provided by the community: [https://github.com/wonderflow/vela-backstage-demo](https://github.com/wonderflow/vela-backstage-demo).
+For the demonstration of the KubeVela add-on for Backstage we are taking as a starting point and first commit the repository provided by the community. 
+
+The modifications made to present the actual integration of Backstage with KubeVela, as well as the examples and other parts of the code initially belong to the repositories listed below and referenced elsewhere in the document.
+
+- [https://github.com/kubevela-contrib/backstage-plugin-kubevela/tree/main](https://github.com/kubevela-contrib/backstage-plugin-kubevela/tree/main)
+- [https://github.com/wonderflow/vela-backstage-demo](https://github.com/wonderflow/vela-backstage-demo)
 
 ## Module installation
 
@@ -59,7 +64,7 @@ vela status backstage -n vela-system
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
-You can always keep your infrastructure deployment up to date using GitOps with FluxCD in KubeVela.
+You can always keep your infrastructure deployment up to date using [GitOps with FluxCD in KubeVela]().
 
 ## Uninstall
 
@@ -68,3 +73,45 @@ You can undo the changes and remove the application deployment with the followin
 ```
 vela delete backstage -n vela-system  
 ```
+
+# Integration
+
+The Backstage plugin for KubeVela will connect to the Kubernetes API and request OAM applications to be served in Backstage. 
+
+Following the [plugin documentation](https://github.com/kubevela-contrib/backstage-plugin-kubevela/blob/main/README.md#system-model-integration):
+
+- A OAM application will become a backstage system.
+- Resources created by the candle component will become backstage components.
+- Resources can be marked with annotations to represent more information behind the scenes as described in the Known Annotations section.
+
+## Known Annotations
+
+KubeVela will sync with the backstage Well-known Annotations, besides that, KubeVela adds some more annotations that can help sync data from vela application to backstage spec.
+
+| Annotations                           |               Usage        |
+| :------------------------------------: | :---------------------------------------:|
+|    `backstage.oam.dev/owner`        |  Owner of the app synced to backstage |
+|    `backstage.oam.dev/domain`        | Domain of the app synced to backstage  |
+|    `backstage.oam.dev/system`        | System of the app synced to backstage, by default its the name of application  |
+|    `backstage.oam.dev/description`        |    Description of the app synced to backstage | 
+|    `backstage.oam.dev/title`        |   Title of the app synced to backstage |
+|    `backstage.oam.dev/tags`        |   Tags of the app synced to backstage, split by `,`  |
+
+
+Don't forget to checkout the examples directory, which contains all kinds of usage examples. Common ones are:
+
+- the annotations and labels of vela application will be automatically injected on syncing, while vela component need a backstage trait for this, check the app.yaml for details.
+- You can configure as the trait, then it will sync the backstage entity from the location targets. Check out app-location.yaml for details.backstage-location
+- You can also specify the backstage system if you want different vela apps in the same backstage system. Check out app-with-system.yaml for details.
+
+
+
+## More info
+
+You can check the evolution of the integration level in the official maintained repositories. As well as news, updates and future goals.
+
+ - [https://github.com/kubevela-contrib/backstage-plugin-kubevela/tree/main](https://github.com/kubevela-contrib/backstage-plugin-kubevela/tree/main)
+
+
+
+
