@@ -3,9 +3,9 @@ kind: Application
 metadata:
   name: vela-app-location
   annotations:
-    backstage.oam.dev/owner: "vela-maintainers"
+    backstage.oam.dev/owner: "napptive-maintainers"
     backstage.oam.dev/domain: "vela-backstage-demo"
-    backstage.oam.dev/description: "This is a sample application."
+    backstage.oam.dev/description: "This is a sample application to test the integration of KubeVela with Backstage."
     backstage.oam.dev/title: "Vela App Location"
     backstage.oam.dev/tags: "backstage-location-demo, vela"
 spec:
@@ -22,7 +22,7 @@ spec:
           properties:
             type: url
             targets:
-              - "https://raw.githubusercontent.com/kubevela-contrib/backstage-plugin-kubevela/main/examples/backstage-group.yaml"
-              - "https://raw.githubusercontent.com/kubevela-contrib/backstage-plugin-kubevela/main/examples/backstage-user.yaml"
-              - "https://raw.githubusercontent.com/kubevela-contrib/backstage-plugin-kubevela/main/examples/backstage-domain.yaml"
-              - "https://raw.githubusercontent.com/kubevela-contrib/backstage-plugin-kubevela/main/examples/backstage-api.yaml"
+              - "https://raw.githubusercontent.com/activa-prefapp/backstage-kubevela/backstage-demo/examples-integration/backstage-group.yaml?token=GHSAT0AAAAAACCA3CBIEMQ6MIYXA72K6A4IZEYUJYA"
+              - "https://raw.githubusercontent.com/activa-prefapp/backstage-kubevela/backstage-demo/examples-integration/backstage-user.yaml?token=GHSAT0AAAAAACCA3CBINZCF3AUQVF7MS7UCZEYUKSQ"
+              - "https://raw.githubusercontent.com/activa-prefapp/backstage-kubevela/backstage-demo/examples-integration/backstage-domain.yaml?token=GHSAT0AAAAAACCA3CBINDDWTWFNRRFPDTJCZEYUK3Q"
+              - "https://raw.githubusercontent.com/activa-prefapp/backstage-kubevela/backstage-demo/examples-integration/backstage-api.yaml?token=GHSAT0AAAAAACCA3CBJFWCHEB3MCEHW3PBEZEYULEA"

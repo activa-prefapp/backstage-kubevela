@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: vela-maintainers
+  name: napptive-maintainers
   description: The vela maintainers group
 spec:
   type: team
@@ -10,4 +10,4 @@ spec:
     email: security@mail.kubevela.io
     picture: https://github.com/kubevela/kubevela.io/raw/main/docs/resources/KubeVela-01.png
   children: []
-  members: [wonderflow]
+  members: [napptive, prefapp]

@@ -3,9 +3,9 @@ kind: Application
 metadata:
   name: first-vela-app
   annotations:
-    backstage.oam.dev/owner: "vela-maintainers"
+    backstage.oam.dev/owner: "napptive-maintainers"
     backstage.oam.dev/domain: "vela-backstage-demo"
-    backstage.oam.dev/description: "This is a sample application."
+    backstage.oam.dev/description: "This is a sample application to test the integration of KubeVela with Backstage."
     backstage.oam.dev/title: "First Vela App"
     backstage.oam.dev/tags: "first-demo, vela"
 spec:
@@ -22,20 +22,20 @@ spec:
           properties:
             type: website
             lifecycle: production
-            owner: user:wonderflow
-            description: "This is the first hello world app."
+            owner: user:napptive
+            description: "This is a sample application to test the integration of KubeVela with Backstage."
             title: "Hello World"
             tags:
               - "hello-world"
             annotations:
-              backstage.io/view-url: https://github.com/kubevela-contrib/backstage-plugin-kubevela/blob/main/examples/app.yaml
-              backstage.io/edit-url: https://github.com/kubevela-contrib/backstage-plugin-kubevela/edit/main/examples/app.yaml
-              backstage.io/source-location: url:https://github.com/kubevela-contrib/backstage-plugin-kubevela
+              backstage.io/view-url: https://github.com/activa-prefapp/backstage-kubevela/blob/backstage-demo/examples-integration/app.yaml
+              backstage.io/edit-url: https://github.com/activa-prefapp/backstage-kubevela/blob/backstage-demo/examples-integration/app.yaml
+              backstage.io/source-location: url:https://github.com/activa-prefapp/backstage-kubevela
               github.com/project-slug: kubevela-contrib/backstage-plugin-kubevela
               github.com/team-slug: kubevela/maintainers
             labels:
               velaapp: demo
             links:
-              - url: "https://kubevela.net/"
+              - url: "https://github.com/activa-prefapp/documentation/blob/main/README.md"
                 title: "vela-doc"
                 type: "docs"

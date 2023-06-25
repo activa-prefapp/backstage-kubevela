@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: somefive
+  name: prefapp
 spec:
   profile:
-    displayName: Da Yin
-    email: Somefive@foxmail.com
+    displayName: Luca
+    email: prefapp.test@prefapp.com
     picture: https://avatars.githubusercontent.com/u/14019297?v=4
-  memberOf: [vela-maintainers]
+  memberOf: [napptive-maintainers]
