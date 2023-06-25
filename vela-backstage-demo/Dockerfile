@@ -32,4 +32,7 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
 COPY --chown=node:node vela-backstage-demo/packages/backend/dist/bundle.tar.gz vela-backstage-demo/app-config*.yaml ./
 RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
 
+# Local test
+# EXPOSE 7007
+
 CMD ["node", "packages/backend", "--config", "app-config.yaml"]
