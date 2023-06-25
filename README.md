@@ -47,7 +47,16 @@ You should note that the configuration requires deployment on kubernetes with th
 
 You will need to have the necessary secrets configured to be able to access your private repository image. Visit the [requirements section](https://github.com/activa-prefapp/documentation/tree/main/requirements) of the organization's general documentation for more info.
 
-## Deployment Backstage application on KubeVela
+## Enable Backstage plugin
+
+Before deploying the Backstage application, it is necessary to activate the KubeVela plugin for integration.
+
+```
+vela addon registry add experimental --type=helm --endpoint=https://addons.kubevela.net/experimental
+vela addon enable backstage pluginOnly=true
+```
+
+## Deploy Backstage application on KubeVela
 
 To deploy a custom instance of Backstage, such as the one in this repository, deploy the OAM plugin provided:
 
@@ -60,6 +69,15 @@ You can check status with the command:
 
 ```
 vela status backstage -n vela-system
+```
+
+You can display your Backstage using port-forward:
+
+```
+vela port-forward backstage -n vela-system
+
+    local | backstage-plugin-vela | backstage-plugin-vela:8080
+>   local | backstage | backstage:7007                                               
 ```
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
