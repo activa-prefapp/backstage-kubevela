@@ -6,29 +6,6 @@ metadata:
 spec:
   components:
     - type: webservice
-      name: backstage-plugin-vela # the connector
-      properties:
-        image: wonderflow/backstage-plugin-kubevela:latest
-        exposeType: ClusterIP
-        ports:
-          - port: 8080
-            protocol: TCP
-            expose: true
-      traits:
-        - type: service-account
-          properties:
-            name: vela-app-read
-            create: true
-            privileges:
-              - scope: cluster
-                apiGroups:
-                  - core.oam.dev
-                resources:
-                  - applications
-                verbs:
-                  - list
-                  - watch
-    - type: webservice
       name: backstage
       properties:
         image: ghcr.io/activa-prefapp/backstage-test:b0e3471fd0ecbe3596c93a43192c8135c795fbd6
