@@ -118,13 +118,20 @@ KubeVela will sync with the backstage Well-known Annotations, besides that, Kube
 
 Don't forget to checkout the examples directory, which contains all kinds of usage examples. Common ones are:
 
-- the annotations and labels of vela application will be automatically injected on syncing, while vela component need a backstage trait for this, check the app.yaml for details.
-- You can configure as the trait, then it will sync the backstage entity from the location targets. Check out app-location.yaml for details.backstage-location
-- You can also specify the backstage system if you want different vela apps in the same backstage system. Check out app-with-system.yaml for details.
+- the annotations and labels of vela application will be automatically injected on syncing, while vela component need a backstage trait for this, check the [app.yaml](./examples-integration/app.yaml) for details.
+- You can configure as the trait, then it will sync the backstage entity from the location targets. Check out [app-location.yaml](./examples-integration/app-location.yaml) for details.backstage-location
+- You can also specify the backstage system if you want different vela apps in the same backstage system. Check out [app-with-system.yaml](./examples-integration/app-with-system.yaml) for details.
 
 
+## Result of the integration tests
 
-## More info
+Currently the integration is in early development phase. From this Backstage plug-in you should expect only the functionalities described in the previous section.
+
+- You will not yet be able to create OAM components from the component creation section of your Backstage interface.
+
+Integration problems encountered:
+
+- The VelaUX tab configured in the side menu shows integration errors. It is not possible to display the VelaUX content embedded in the Backstage interface.
 
 You can check the evolution of the integration level in the official maintained repositories. As well as news, updates and future goals.
 
