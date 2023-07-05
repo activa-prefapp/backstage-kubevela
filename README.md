@@ -18,7 +18,7 @@ yarn add --cwd packages/app @oamdev/plugin-kubevela-backend
 yarn add --cwd packages/app @oamdev/backstage-plugin-velaux
 ````
 
-With the modules installed, we must follow the steps indicated in the backstage documentation.
+With the modules installed, we must follow the steps indicated in the [backstage documentation](https://backstage.io/docs/deployment/docker).
 
 ````
 yarn install --frozen-lockfile
