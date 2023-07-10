@@ -1,0 +1,17 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: backstage
+  namespace: vela-system
+spec:
+  components:
+    - type: webservice
+      name: backstage
+      properties:
+        image: ghcr.io/activa-prefapp/backstage-test:60a8ec875092dcb21f6bda353d60fd076c08a3f1
+        imagePullSecrets: [git-registry-secret]
+        exposeType: ClusterIP
+        ports:
+          - port: 7007
+            protocol: TCP
+            expose: true
